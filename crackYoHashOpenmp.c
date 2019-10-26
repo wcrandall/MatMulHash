@@ -15,7 +15,7 @@ char *crack( long encoded)
 	char * answer = malloc(5);
 	int found = 0;
 	omp_set_num_threads(24);  
-	#pragma omp parallel for collapse(4) 
+	#pragma omp parallel for collapse(4) schedule(dynamic) 
 	for (int i = 0; i < lettersInAbcs; i++)
 	{
 		for(int j = 0; j < lettersInAbcs; j++)
